@@ -10,7 +10,6 @@ export const ToDo = ({task, toggleComplete, deleteToDo, editTodo}) => {
 
   const HandleOnClickEdit = (e) => {
     e.stopPropagation()
-    console.log("clicked icon")
     editTodo(task.id)
   }
 
@@ -23,8 +22,8 @@ export const ToDo = ({task, toggleComplete, deleteToDo, editTodo}) => {
     <button type="button" className='ToDo' onClick={ToggleComplete}>
       <p className={clsx(task.completed && "ToDo--completed")}>{task.task}</p>
       <div className='ToDoIcons'>
-        <button type="button" onClick={HandleOnClickEdit}><FontAwesomeIcon icon={faPenToSquare} /></button>
-        <button type="button" onClick={HandleOnClickDelete}><FontAwesomeIcon icon={faTrash} /></button>
+        <button type="button" data-delete onClick={HandleOnClickEdit}><FontAwesomeIcon icon={faPenToSquare} /></button>
+        <button type="button" data-edit onClick={HandleOnClickDelete}><FontAwesomeIcon icon={faTrash} /></button>
       </div>
     </button>
   )

@@ -9,6 +9,7 @@ export const ToDoForm = ({ addToDo }) => {
 
   const HandleSubmit = (e) => {
     e.preventDefault();
+    if(value === "") return;
     addToDo(value)
     setValue("")
   }
